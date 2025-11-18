@@ -18,10 +18,10 @@
         <div class="logo-mark">M</div>
         <div class="brand">MOGX</div>
       </div>
-      <nav class="top-right">
-        <a href="#" class="nav-link">Features</a>
-        <a href="#" class="nav-link">Pricing</a>
-        <a href="#" class="cta">Get Started</a>
+      <nav class="top-right" aria-label="Primary navigation">
+        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Pricing</a>
+        <a class="cta" href="#">Get Started</a>
       </nav>
     </header>
 
@@ -30,29 +30,41 @@
         <h1 class="hero-title">Build your glow-up. Chat with MOGX.</h1>
         <p class="hero-sub">Personalized looksmax coaching — skin, hair, body, style & confidence. Start by asking the bot for your plan.</p>
 
-        <div class="chat-card" role="region" aria-label="MOGX chat">
-          <div class="chat-card-top">
-            <div class="chat-badge">MOGX Coach</div>
-            <div class="chat-subtitle">Type a goal — e.g. “30 day skin plan”</div>
+        <!-- WIDE CHAT PANEL -->
+        <section class="wide-chat-wrap" role="region" aria-label="MOGX chat panel">
+          <div class="wide-chat-card">
+            <div class="wide-chat-top">
+              <div class="left-meta">
+                <div class="tag">MOGX Coach</div>
+                <div class="title-small">AI Glow-Up & Transformation</div>
+              </div>
+              <div class="right-meta">
+                <div class="hint">Tip: type “start onboarding”</div>
+              </div>
+            </div>
+
+            <div class="wide-iframe-wrap" id="iframeWrap">
+              <!-- YOUR BOTPRESS IFRAME START -->
+              <iframe id="botpressFrame"
+                      src="https://cdn.botpress.cloud/webchat/v3.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/11/17/08/20251117080924-GJ1WECBQ.json"
+                      title="MOGX Chat"
+                      frameborder="0"
+                      allow="microphone; clipboard-read; clipboard-write"
+                      sandbox="allow-scripts allow-same-origin allow-forms"
+                      aria-label="MOGX chat iframe"></iframe>
+              <!-- YOUR BOTPRESS IFRAME END -->
+
+              <div class="loading-ghost" id="spinner" aria-hidden="true"></div>
+            </div>
+
+            <div class="wide-chat-foot">
+              <div class="progress-note">Personalized plans, 30/90-day blueprints & daily micro-tasks</div>
+              <div class="version">v1.0</div>
+            </div>
           </div>
+        </section>
 
-          <div class="chat-frame-wrap" id="chatFrameWrap">
-            <!-- Replace src below with your Botpress iframe URL -->
-            <iframe id="botpressFrame"
-                    src="https://cdn.botpress.cloud/webchat/v3.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/11/17/08/20251117080924-GJ1WECBQ.json"
-                    title="MOGX Chat"
-                    frameborder="0"
-                    allow="microphone; clipboard-read; clipboard-write"
-                    sandbox="allow-scripts allow-same-origin allow-forms"
-                    aria-label="MOGX chat iframe"></iframe>
-
-            <div class="loading-ghost" id="spinner" aria-hidden="true"></div>
-          </div>
-
-          <div class="chat-hint">Tip: say “start onboarding” for your custom 30-day plan.</div>
-        </div>
-
-        <div class="small-foot">© <span id="year"></span> MOGX — AI Glow-Up Coach</div>
+        <div class="small-foot">© <span id="year"></span> MOGX</div>
       </div>
     </main>
   </div>
