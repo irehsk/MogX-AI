@@ -1,4 +1,4 @@
-/* GLOBAL */
+/* RESET + GLOBAL */
 * {
   margin: 0;
   padding: 0;
@@ -8,26 +8,26 @@
 body {
   font-family: "Plus Jakarta Sans", "Inter", sans-serif;
   background: #04050b;
-  color: white;
+  color: #ffffff;
   overflow-x: hidden;
 }
 
 /* ---------------------------------------------------
-   LANDING PAGE (SCREEN 1)
+   LANDING PAGE
 --------------------------------------------------- */
 .landing-screen {
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
-  background-image: url("assets/magicpattern-65O4Dw6-xLg-unsplash.jpg"); /* FIXED FILE NAME */
+  background-image: url("assets/magicpattern-65O4Dw6-xLg-unsplash.jpg");
   background-size: cover;
-  background-position: top center; /* shows the bright part */
+  background-position: top center;
   background-repeat: no-repeat;
 
   display: flex;
   justify-content: center;
- 	align-items: center;
+  align-items: center;
   text-align: center;
-  padding: 0 30px;
+  padding: 20px;
 
   opacity: 1;
   transition: opacity 0.8s ease-in-out;
@@ -39,10 +39,9 @@ body {
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: 3.4rem;
   font-weight: 800;
   line-height: 1.15;
-  text-shadow: 0 6px 30px rgba(0,0,0,0.5);
 }
 
 .gradient {
@@ -52,14 +51,14 @@ body {
 }
 
 .subtitle {
-  margin-top: 18px;
+  margin-top: 14px;
   font-size: 1.2rem;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .start-btn {
-  margin-top: 40px;
-  padding: 16px 38px;
+  margin-top: 35px;
+  padding: 15px 36px;
   font-size: 1.25rem;
   border: none;
   border-radius: 14px;
@@ -69,6 +68,7 @@ body {
   background: linear-gradient(135deg, #5A3DF6, #C83AF9);
   color: #fff;
   box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+
   transition: 0.25s;
 }
 
@@ -78,7 +78,7 @@ body {
 }
 
 /* ---------------------------------------------------
-   CHAT PAGE (SCREEN 2)
+   CHAT PAGE
 --------------------------------------------------- */
 .chat-screen {
   min-height: 100vh;
@@ -103,25 +103,24 @@ body {
   width: 95%;
   max-width: 1100px;
 
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
   border-radius: 22px;
   padding: 40px;
-  backdrop-filter: blur(20px);
   border: 1px solid rgba(255,255,255,0.15);
   box-shadow: 0 8px 40px rgba(0,0,0,0.3);
 }
 
 .chat-header {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 800;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .chat-frame {
   width: 100%;
   height: 75vh;
   overflow: hidden;
-
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,0.1);
 }
@@ -140,15 +139,7 @@ body {
     font-size: 2.4rem;
   }
 
-  .subtitle {
-    font-size: 1rem;
-  }
-
   .chat-container {
     padding: 22px;
-  }
-
-  .chat-header {
-    font-size: 1.6rem;
   }
 }
