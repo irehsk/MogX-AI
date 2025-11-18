@@ -36,6 +36,9 @@ body {
 .landing-screen.fade-out {
   opacity: 0;
   pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .title {
