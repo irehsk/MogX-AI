@@ -1,28 +1,60 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // year
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  // iframe + spinner
-  const iframe = document.getElementById('botpressFrame');
+  const getStarted = document.getElementById('getStarted');
+  const getStartedTop = document.getElementById('getStartedTop');
+  const backBtn = document.getElementById('backBtn');
+  const app = document.getElementById('app');
   const spinner = document.getElementById('spinner');
-  const iframeWrap = document.getElementById('iframeWrap');
+  const iframe = document.getElementById('botpressFrame');
 
-  if (!iframe) {
-    console.warn('MOGX: iframe missing. Make sure index.html contains your Botpress iframe URL.');
-    if (spinner) spinner.style.display = 'none';
-    return;
+  // helper to show chat
+  function showChat() {
+    // add class to body/app to trigger CSS transitions
+    document.body.classList.add('show-chat');
+    app.classList.remove('screen-landing');
+    app.classList.add('screen-chat');
+    // update aria
+    document.getElementById('landingScreen').setAttribute('aria-hidden', 'true');
+    document.getElementById('chatScreen').setAttribute('aria-hidden', 'false');
+
+    // focus iframe after small delay
+    setTimeout(() => {
+      try { iframe.focus(); } catch (e){}
+    }, 600);
   }
 
-  // hide spinner when iframe fully loads
-  iframe.addEventListener('load', () => {
-    if (spinner) spinner.style.display = 'none';
-    // slight resize fix
-    setTimeout(() => {
-      try { iframe.style.height = iframe.parentElement.clientHeight + 'px'; } catch (e) {}
-    }, 120);
-  });
+  // helper to go back
+  function hideChat() {
+    document.body.classList.remove('show-chat');
+    app.classList.add('screen-landing');
+    app.classList.remove('screen-chat');
+    document.getElementById('landingScreen').setAttribute('aria-hidden', 'false');
+    document.getElementById('chatScreen').setAttribute('aria-hidden', 'true');
+  }
 
-  // fallback hide
-  setTimeout(() => { if (spinner) spinner.style.display = 'none'; }, 7000);
+  // click handlers
+  if (getStarted) getStarted.addEventListener('click', showChat);
+  if (getStartedTop) getStartedTop.addEventListener('click', showChat);
+  if (backBtn) backBtn.addEventListener('click', hideChat);
+
+  // iframe load handling
+  if (iframe) {
+    iframe.addEventListener('load', () => {
+      if (spinner) spinner.style.display = 'none';
+      // small resize fix
+      setTimeout(() => { try { iframe.style.height = iframe.parentElement.clientHeight + 'px'; } catch(e){} }, 120);
+    });
+    // fallback hide
+    setTimeout(() => { if (spinner) spinner.style.display = 'none'; }, 7000);
+  }
+
+  // accessibility: allow Enter on call-to-action when focused
+  [getStarted, getStartedTop].forEach(btn => {
+    if (!btn) return;
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        showChat();
+      }
+    });
+  });
 });
