@@ -1,95 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MOGX — AI Glow-Up Coach</title>
-
-  <!-- Inter font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOGX – AI Glow-Up Coach</title>
   <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="MOGX — AI-powered looksmax coach. Built-in chat UI." />
+
+  <!-- Premium Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="app" class="screen-landing">
 
-    <!-- NAV -->
-    <header class="topbar" role="banner">
-      <div class="logo">
-        <div class="logo-mark" aria-hidden="true">M</div>
-        <div class="brand">MOGX</div>
+  <!-- SCREEN 1 – Landing Page -->
+  <section class="landing-screen" id="landing">
+    <div class="landing-content">
+      <h1 class="title">Build your glow-up.<br><span class="gradient">Chat with MOGX.</span></h1>
+      <p class="subtitle">AI-powered looksmax coaching — skin, hair, body, style & confidence.</p>
+
+      <button class="start-btn" onclick="startApp()">Get Started →</button>
+    </div>
+  </section>
+
+  <!-- SCREEN 2 – Chat Page -->
+  <section class="chat-screen" id="chat">
+    <div class="chat-container">
+
+      <h2 class="chat-header">MOGX AI Coach</h2>
+
+      <div class="chat-frame">
+        <iframe 
+          src="https://cdn.botpress.cloud/webchat/v3.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/11/17/08/20251117080924-GJ1WECBQ.json"
+          allow="clipboard-write; microphone">
+        </iframe>
       </div>
-      <nav class="nav">
-        <a href="#features" class="nav-link">Features</a>
-        <a href="#pricing" class="nav-link">Pricing</a>
-        <button id="getStartedTop" class="btn-ghost">Get Started</button>
-      </nav>
-    </header>
 
-    <!-- LANDING SCREEN -->
-    <section class="landing" id="landingScreen" aria-hidden="false">
-      <div class="landing-overlay"></div>
-
-      <div class="landing-inner">
-        <h1 class="landing-title">Build your glow-up. Chat with MOGX.</h1>
-        <p class="landing-sub">Personalized looksmax coaching — skin, hair, body, style & confidence. Fast, practical and tailored to you.</p>
-
-        <div class="cta-row">
-          <button id="getStarted" class="btn-primary btn-xl" aria-controls="chatScreen">Get Started — Begin My Plan</button>
-          <div class="mini-badges" aria-hidden="true">
-            <span class="badge">30/90-day plans</span>
-            <span class="badge">Personalized</span>
-            <span class="badge">Science-backed</span>
-          </div>
-        </div>
-
-        <div class="landing-footer">
-          <small>Trusted by early adopters • Prototype</small>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAT SCREEN (hidden at load) -->
-    <section class="chat" id="chatScreen" aria-hidden="true">
-      <div class="chat-inner">
-        <div class="chat-topbar">
-          <div class="chat-left">
-            <button id="backBtn" class="btn-back" aria-label="Back to landing">&#8592;</button>
-            <div class="chat-title-wrap">
-              <div class="pill">MOGX Coach</div>
-              <div class="chat-small">AI Glow-Up & Transformation</div>
-            </div>
-          </div>
-
-          <div class="chat-right">
-            <div class="chat-tip">Tip: type “start onboarding”</div>
-          </div>
-        </div>
-
-        <div class="chat-panel" id="chatPanel" role="region" aria-label="MOGX chat area">
-          <div class="iframe-wrap" id="iframeWrap">
-            <!-- Replace src below if you regenerate embed code -->
-            <iframe id="botpressFrame"
-                    src="https://cdn.botpress.cloud/webchat/v3.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/11/17/08/20251117080924-GJ1WECBQ.json"
-                    title="MOGX Chat"
-                    frameborder="0"
-                    allow="microphone; clipboard-read; clipboard-write"
-                    sandbox="allow-scripts allow-same-origin allow-forms"
-                    aria-label="MOGX chat iframe"></iframe>
-
-            <div class="loading-ghost" id="spinner" aria-hidden="true"></div>
-          </div>
-
-          <div class="chat-foot">
-            <div class="foot-left">Personalized plans • Daily routines • Progress tracking</div>
-            <div class="foot-right">v1.0</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </div>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
