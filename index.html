@@ -8,74 +8,54 @@
   <!-- Inter font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- stylesheet -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- meta -->
-  <meta name="description" content="MOGX — AI-powered looksmax coach. Chat built-in." />
+  <meta name="description" content="MOGX — AI-powered looksmax coach. Built-in chat UI." />
 </head>
 <body>
-  <main class="page-bg">
-    <div class="stage">
-      <header class="brand">
-        <div class="logo">
-          <div class="logo-mark">M</div>
-          <div class="logo-text">MOGX</div>
-        </div>
-        <div class="brand-right">
-          <div class="tag">AI Glow-Up Coach</div>
-        </div>
-      </header>
+  <div class="page">
+    <header class="topbar">
+      <div class="top-left">
+        <div class="logo-mark">M</div>
+        <div class="brand">MOGX</div>
+      </div>
+      <nav class="top-right">
+        <a href="#" class="nav-link">Features</a>
+        <a href="#" class="nav-link">Pricing</a>
+        <a href="#" class="cta">Get Started</a>
+      </nav>
+    </header>
 
-      <section class="app-card" role="region" aria-label="MOGX chat app">
-        <div class="left-panel">
-          <h1>Transform. Confident. Consistent.</h1>
-          <p class="lead">Personalized looksmax coaching — skin, hair, body, style and social. Powered by MOGX AI.</p>
+    <main class="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title">Build your glow-up. Chat with MOGX.</h1>
+        <p class="hero-sub">Personalized looksmax coaching — skin, hair, body, style & confidence. Start by asking the bot for your plan.</p>
 
-          <ul class="feature-list">
-            <li><strong>Personalized plans</strong> based on your profile</li>
-            <li><strong>30 / 90 day</strong> transformation blueprints</li>
-            <li><strong>Actionable daily</strong> micro habits and routines</li>
-          </ul>
-
-          <div class="onboard-note">
-            <div class="dot"></div>
-            <div>Start by answering a few onboarding questions inside the chat for a fully tailored plan.</div>
+        <div class="chat-card" role="region" aria-label="MOGX chat">
+          <div class="chat-card-top">
+            <div class="chat-badge">MOGX Coach</div>
+            <div class="chat-subtitle">Type a goal — e.g. “30 day skin plan”</div>
           </div>
 
-          <footer class="card-foot">
-            <div class="small">Made with ❤️ — MOGX</div>
-            <div class="version">v1.0</div>
-          </footer>
-        </div>
+          <div class="chat-frame-wrap" id="chatFrameWrap">
+            <!-- Replace src below with your Botpress iframe URL -->
+            <iframe id="botpressFrame"
+                    src="https://cdn.botpress.cloud/webchat/v3.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/11/17/08/20251117080924-GJ1WECBQ.json"
+                    title="MOGX Chat"
+                    frameborder="0"
+                    allow="microphone; clipboard-read; clipboard-write"
+                    sandbox="allow-scripts allow-same-origin allow-forms"
+                    aria-label="MOGX chat iframe"></iframe>
 
-        <div class="chat-panel">
-          <div class="chat-shell">
-            <div class="chat-top">
-              <div class="chat-title">MOGX Coach</div>
-              <div class="chat-sub">Type your goal — e.g. “clear skin plan”</div>
-            </div>
-
-            <div class="iframe-wrap" id="iframeWrap">
-              <div class="spinner" id="spinner" aria-hidden="true"></div>
-              <!-- Replace the src below with your Botpress iframe URL -->
-              <iframe id="botpressFrame"
-                      src="YOUR_BOTPRESS_IFRAME_URL_HERE"
-                      title="MOGX Chat"
-                      frameborder="0"
-                      allow="microphone; clipboard-read; clipboard-write"
-                      sandbox="allow-scripts allow-same-origin allow-forms"
-                      aria-label="MOGX chat iframe"></iframe>
-            </div>
-
-            <div class="chat-hint">Pro tip: say “start onboarding” to get your 30-day plan.</div>
+            <div class="loading-ghost" id="spinner" aria-hidden="true"></div>
           </div>
-        </div>
-      </section>
 
-      <div class="credit">© <span id="year"></span> MOGX — Built for transformation</div>
-    </div>
-  </main>
+          <div class="chat-hint">Tip: say “start onboarding” for your custom 30-day plan.</div>
+        </div>
+
+        <div class="small-foot">© <span id="year"></span> MOGX — AI Glow-Up Coach</div>
+      </div>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
