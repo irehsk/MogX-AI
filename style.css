@@ -1,23 +1,30 @@
-body {
-  margin: 0;
-  background: #0d0d0d;
-  color: white;
-  font-family: Arial, sans-serif;
+// Update year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Chat open/close handlers
+const chatWrapper = document.getElementById('chat-wrapper');
+const openBtn = document.getElementById('open-chat') || document.getElementById('start-chat');
+const closeBtn = document.getElementById('close-chat');
+
+function openChat(e){
+  e && e.preventDefault();
+  chatWrapper.classList.add('open');
+  chatWrapper.setAttribute('aria-hidden','false');
+  // scroll iframe into view (mobile)
+  const frame = document.querySelector('.chat-frame');
+  if (frame) frame.scrollIntoView({behavior:'smooth'});
+}
+function closeChat(e){
+  e && e.preventDefault();
+  chatWrapper.classList.remove('open');
+  chatWrapper.setAttribute('aria-hidden','true');
 }
 
-#app {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+if(openBtn) openBtn.addEventListener('click', openChat);
+if(closeBtn) closeBtn.addEventListener('click', closeChat);
 
-.chat-frame {
-  width: 90%;
-  height: 90vh;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-}
+// auto-open small delay on first visit (optional)
+// setTimeout(()=> openChat(), 1200);
+
+// Console friendly
+console.log("MOGX UI loaded — dark theme with blue gradient");
