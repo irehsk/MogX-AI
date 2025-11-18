@@ -1,20 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MogX AI</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MOGX AI — Looksmax Coach</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/favicon.ico" />
 </head>
 <body>
-  <div id="app">
-    <h1>MogX AI</h1>
-    <iframe
-      src="https://cdn.botpress.cloud/webchat/v3.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/11/17/08/20251117080924-GJ1WECBQ.json"
-      class="chat-frame"
-      frameborder="0"
-    ></iframe>
+  <div class="page-bg">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
   </div>
+
+  <header class="nav">
+    <div class="nav-left">
+      <div class="logo">MOGX<span>AI</span></div>
+      <div class="tag">Looksmax • Glow-up • Transformation</div>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="cta" id="open-chat">Open Chat</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <h1>Build your glow-up. One habit at a time.</h1>
+      <p class="lead">Personalized looksmax protocols — jawline, skin, style, posture, and growth. Free, fast, and practical.</p>
+
+      <div class="hero-actions">
+        <a class="btn primary" id="start-chat">Start Your Protocol</a>
+        <a class="btn ghost" href="#features">How it works</a>
+      </div>
+    </section>
+
+    <aside class="chat-wrapper" id="chat-wrapper" aria-hidden="true">
+      <div class="chat-panel">
+        <div class="chat-header">
+          <div class="chat-title">MOGX AI</div>
+          <div class="chat-sub">Your looksmax coach</div>
+        </div>
+
+        <!-- Embedded Botpress webchat -->
+        <div id="botpress-chat" class="chat-embed">
+          <iframe
+            src="https://cdn.botpress.cloud/webchat/v3.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/11/17/08/20251117080924-GJ1WECBQ.json"
+            title="MOGX Chat"
+            frameborder="0"
+            class="chat-frame"
+            allow="microphone; camera"
+          ></iframe>
+        </div>
+
+        <div class="chat-footer">
+          <button id="close-chat" class="link-btn">Close</button>
+        </div>
+      </div>
+    </aside>
+
+    <section id="features" class="features">
+      <div class="feature">
+        <h3>Instant fixes (0–7 days)</h3>
+        <p>Small daily wins: sleep, hydration, posture, and quick grooming that change how you look immediately.</p>
+      </div>
+      <div class="feature">
+        <h3>30-day plan</h3>
+        <p>Daily workouts, protein-first diet, posture drills, and a skin routine tailored to your type.</p>
+      </div>
+      <div class="feature">
+        <h3>90-365 day transformation</h3>
+        <p>Progressive routines for fat loss, frame building, style upgrade, and mindset development.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> MOGX AI • Built on Botpress + Vercel</div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
