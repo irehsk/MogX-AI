@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MOGX AI — Your Looksmax Coach</title>
+  <title>MOGX AI — Looksmax Coach</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <div class="background">
     <div class="gradient-orb orb1"></div>
     <div class="gradient-orb orb2"></div>
@@ -17,29 +18,23 @@
   </header>
 
   <main class="main-content">
-    <section class="hero">
-      <h1>Talk to your personal glow-up coach</h1>
-      <p class="hero-sub">Get looksmaxing, grooming, posture & growth advice — all through chat.</p>
-      <button class="btn open-chat" id="open-chat">Open Chat</button>
+    <section class="left-panel">
+      <h1>Talk to Your Looksmax Coach</h1>
+      <p>Live looksmaxing guidance.  
+      Protocols • Glow-up • Diet • Skin • Posture • Grooming • Height optimization</p>
     </section>
-  </main>
 
-  <div class="chat-modal" id="chat-modal" aria-hidden="true">
-    <div class="chat-container">
-      <div class="chat-header">
-        <div class="chat-title">MOGX AI</div>
-        <button class="btn-close" id="close-chat">✕</button>
-      </div>
+    <section class="chat-panel">
       <iframe
         class="chat-frame"
         src="https://cdn.botpress.cloud/webchat/v3.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/11/17/08/20251117080924-GJ1WECBQ.json"
         frameborder="0"
       ></iframe>
-    </div>
-  </div>
+    </section>
+  </main>
 
   <footer class="footer">
-    <p>© <span id="year"></span> MOGX AI</p>
+    © <span id="year"></span> MOGX AI — Built on Botpress + Vercel
   </footer>
 
   <script src="script.js"></script>
