@@ -33,13 +33,45 @@ body {
   transition: opacity 0.8s ease-in-out;
 }
 
+/* LANDING (on fade-out) */
 .landing-screen.fade-out {
   opacity: 0;
   pointer-events: none;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100vh;
 }
+
+/* CHAT SCREEN BASE */
+.chat-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: #04050b; /* ensures solid dark bg, not transparent or black flash */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.9s ease-in-out;
+  z-index: 10; /* make sure it's above landing when active */
+}
+
+.chat-screen.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Container inside chat */
+.chat-container {
+  z-index: 20; /* ensure chat content is above the chat-screen background */
+}
+
 
 .title {
   font-size: 3.4rem;
