@@ -84,6 +84,7 @@ body {
   min-height: 100vh;
   width: 100%;
   padding: 60px 20px;
+  background: #04050b;  /* <--- FIX */
 
   display: flex;
   justify-content: center;
@@ -93,6 +94,7 @@ body {
   pointer-events: none;
   transition: opacity 0.9s ease-in-out;
 }
+
 
 .chat-screen.active {
   opacity: 1;
