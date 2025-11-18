@@ -115,13 +115,17 @@ body {
 }
 
 /* ---------------------------------------------------
-   CHAT PAGE
+   CHAT PAGE — CLEAN, BIGGER, NO GREY LAYER
 --------------------------------------------------- */
 .chat-screen {
-  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 60px 20px;
-  background: #04050b;  /* <--- FIX */
+  min-height: 100vh;
+
+  /* GRADIENT BACKGROUND */
+  background: linear-gradient(135deg, #0a0515, #130b2e, #1a093d, #250a5c);
 
   display: flex;
   justify-content: center;
@@ -130,38 +134,45 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.9s ease-in-out;
+  z-index: 5;
 }
-
 
 .chat-screen.active {
   opacity: 1;
   pointer-events: auto;
 }
 
+/* REMOVE GREY BOX COMPLETELY */
 .chat-container {
-  width: 95%;
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1250px;
+  padding: 0 20px;
 
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  border-radius: 22px;
-  padding: 40px;
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  background: transparent; /* FULLY transparent */
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
+/* Chat header */
 .chat-header {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 800;
   margin-bottom: 20px;
+  text-align: center;
 }
 
+/* Chat iframe is now MUCH bigger + cleaner */
 .chat-frame {
   width: 100%;
-  height: 75vh;
+  height: 85vh;  /* BIGGER CHAT PANEL */
+  border-radius: 20px;
+
+  /* optional glow */
+  box-shadow: 0 0 30px rgba(150, 80, 255, 0.3);
+
   overflow: hidden;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.08);
 }
 
 .chat-frame iframe {
