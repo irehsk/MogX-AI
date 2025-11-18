@@ -1,130 +1,102 @@
-/* RESET + GLOBAL */
+/* ---------------------------------------------------
+   GLOBAL
+--------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-  background: #04050b;
-  color: #ffffff;
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  background: #000;
   overflow-x: hidden;
+  color: white;
+}
+
+/* Smooth fade */
+section {
+  transition: opacity 1s ease-in-out;
+}
+
+/* Gradient text */
+.gradient {
+  background: linear-gradient(90deg, #7f5eff, #00d2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ---------------------------------------------------
    LANDING PAGE
 --------------------------------------------------- */
 .landing-screen {
-  height: 100vh;
   width: 100%;
-  background-image: url("assets/magicpattern-65O4Dw6-xLg-unsplash.jpg");
+  height: 100vh;
+
+  background: url("assets/magicpattern-65O4Dw6-xLg-unsplash.jpg");
   background-size: cover;
-  background-position: top center;
+  background-position: center;
   background-repeat: no-repeat;
 
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+
   padding: 20px;
-
-  opacity: 1;
-  transition: opacity 0.8s ease-in-out;
 }
 
-/* LANDING (on fade-out) */
-.landing-screen.fade-out {
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+.landing-content {
+  max-width: 900px;
+  padding: 40px 20px;
+
+  backdrop-filter: blur(6px);
 }
-
-/* CHAT SCREEN BASE */
-.chat-screen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100vh;
-  background: #04050b; /* ensures solid dark bg, not transparent or black flash */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.9s ease-in-out;
-  z-index: 10; /* make sure it's above landing when active */
-}
-
-.chat-screen.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Container inside chat */
-.chat-container {
-  z-index: 20; /* ensure chat content is above the chat-screen background */
-}
-
 
 .title {
-  font-size: 3.4rem;
+  font-size: 3.5rem;
   font-weight: 800;
+  margin-bottom: 18px;
   line-height: 1.15;
 }
 
-.gradient {
-  background: linear-gradient(135deg, #4cc9f0, #4361ee);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0px 0px 12px rgba(67, 97, 238, 0.6));
-}
-
-
 .subtitle {
-  margin-top: 14px;
-  font-size: 1.2rem;
-  opacity: 0.85;
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 35px;
 }
 
 .start-btn {
-  margin-top: 35px;
-  padding: 15px 36px;
-  font-size: 1.25rem;
+  padding: 16px 40px;
+  background: linear-gradient(90deg, #7f5eff, #00d2ff);
   border: none;
-  border-radius: 14px;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: 700;
-
-  background: linear-gradient(135deg, #5A3DF6, #C83AF9);
-  color: #fff;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-
-  transition: 0.25s;
+  transition: 0.3s ease;
 }
 
 .start-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 45px rgba(0,0,0,0.6);
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 /* ---------------------------------------------------
-   CHAT PAGE — CLEAN, BIGGER, NO GREY LAYER
+   CHAT PAGE
 --------------------------------------------------- */
 .chat-screen {
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
   min-height: 100vh;
 
-  /* GRADIENT BACKGROUND */
+  /* Gradient Background */
   background: linear-gradient(135deg, #0a0515, #130b2e, #1a093d, #250a5c);
 
   display: flex;
@@ -133,8 +105,7 @@ body {
 
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.9s ease-in-out;
-  z-index: 5;
+  z-index: 10;
 }
 
 .chat-screen.active {
@@ -142,37 +113,31 @@ body {
   pointer-events: auto;
 }
 
-/* REMOVE GREY BOX COMPLETELY */
 .chat-container {
   width: 100%;
   max-width: 1250px;
-  padding: 0 20px;
-
-  background: transparent; /* FULLY transparent */
+  padding: 20px;
+  background: transparent;
   border: none;
   box-shadow: none;
-  backdrop-filter: none;
 }
 
-/* Chat header */
 .chat-header {
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   font-weight: 800;
-  margin-bottom: 20px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Chat iframe is now MUCH bigger + cleaner */
+/* Chat Frame */
 .chat-frame {
   width: 100%;
-  height: 85vh;  /* BIGGER CHAT PANEL */
-  border-radius: 20px;
-
-  /* optional glow */
-  box-shadow: 0 0 30px rgba(150, 80, 255, 0.3);
-
+  height: 85vh;
+  border-radius: 22px;
   overflow: hidden;
-  border: 2px solid rgba(255,255,255,0.08);
+
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 35px rgba(130, 80, 255, 0.3);
 }
 
 .chat-frame iframe {
@@ -181,15 +146,17 @@ body {
   border: none;
 }
 
+
 /* ---------------------------------------------------
-   MOBILE
+   MOBILE RESPONSIVE
 --------------------------------------------------- */
 @media (max-width: 768px) {
+
   .title {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
   }
 
-  .chat-container {
-    padding: 22px;
+  .chat-frame {
+    height: 80vh;
   }
 }
