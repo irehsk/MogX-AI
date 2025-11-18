@@ -1,28 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // year
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // iframe + spinner
   const iframe = document.getElementById('botpressFrame');
   const spinner = document.getElementById('spinner');
+  const iframeWrap = document.getElementById('iframeWrap');
 
   if (!iframe) {
-    console.warn('MOGX: iframe missing. Replace YOUR_BOTPRESS_IFRAME_URL_HERE in index.html with your Botpress iframe URL.');
+    console.warn('MOGX: iframe missing. Make sure index.html contains your Botpress iframe URL.');
+    if (spinner) spinner.style.display = 'none';
     return;
   }
 
-  // Hide the ghost spinner when iframe loads
+  // hide spinner when iframe fully loads
   iframe.addEventListener('load', () => {
     if (spinner) spinner.style.display = 'none';
-    // minor resize adjustment
+    // slight resize fix
     setTimeout(() => {
-      try {
-        iframe.style.height = iframe.parentElement.clientHeight + 'px';
-      } catch (e) {}
+      try { iframe.style.height = iframe.parentElement.clientHeight + 'px'; } catch (e) {}
     }, 120);
   });
 
-  // safety hide after 6s
-  setTimeout(() => {
-    if (spinner) spinner.style.display = 'none';
-  }, 6000);
+  // fallback hide
+  setTimeout(() => { if (spinner) spinner.style.display = 'none'; }, 7000);
 });
