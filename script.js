@@ -2,11 +2,11 @@ function startApp() {
   const landing = document.getElementById("landing");
   const chat = document.getElementById("chat");
 
-  // fade out landing
+  // fade out landing page
   landing.classList.add("fade-out");
 
-  // activate chat screen after fade
+  // after fade, show chat
   setTimeout(() => {
     chat.classList.add("active");
-  }, 600);
+  }, 700);
 }
