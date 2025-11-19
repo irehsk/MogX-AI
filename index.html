@@ -1,41 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MogX – AI Glow-Up Coach</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOGX – AI Looksmax Coach</title>
 
-<link rel="stylesheet" href="style.css">
+    <!-- Load SF Pro Display from Apple CDN (works without local fonts) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sf-pro-display/dist/sf-pro-display.css">
 
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="logo">MOG<span>X</span></div>
 
-<div class="bg-gradient"></div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
 
-<!-- Sidebar -->
-<div class="sidebar glass">
-    <div class="logo">Mog<span class="logo-x">X</span></div>
-
-    <nav class="nav-links">
-        <a href="#">Get Started</a>
-        <a href="#">FAQ</a>
-        <a href="#">About us</a>
-        <a href="#">Subscription</a>
-        <a href="#">Testimonials</a>
+        <div class="nav-cta">
+            <a href="#" class="login">Log In</a>
+            <a href="#" class="signup">Sign Up</a>
+        </div>
     </nav>
-</div>
 
-<!-- Main content -->
-<div class="main">
-    <h1>Your AI Looksmαx &<br>Glow-Up Coach</h1>
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Level Up Your Look.<br>Instantly.</h1>
+            <p>Your personal AI glow-up & looksmaxing coach — backed by science, styled like luxury.</p>
 
-    <button class="btn-primary glass">Get Started</button>
+            <div class="hero-buttons">
+                <button id="startBtn" class="primary-btn">Get Started</button>
+                <button class="secondary-btn">Watch Demo</button>
+            </div>
+        </div>
 
-    <div class="auth-buttons">
-        <button class="btn glass">log in</button>
-        <button class="btn glass">sign in</button>
+        <div class="hero-orb"></div>
+        <div class="hero-glass"></div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <h2 class="section-title">Why MOGX Works</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card glass">
+                <h3>AI Face Analysis</h3>
+                <p>Advanced face metrics give you a detailed improvement roadmap.</p>
+            </div>
+
+            <div class="feature-card glass">
+                <h3>Glow-Up Routine</h3>
+                <p>Daily tasks to improve skin, jawline, hair, gym, and more.</p>
+            </div>
+
+            <div class="feature-card glass">
+                <h3>1:1 AI Coach</h3>
+                <p>Chat with your personal looksmax coach anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <h2 class="section-title">Choose Your Plan</h2>
+
+        <div class="pricing-cards">
+            <div class="price-card">
+                <h3>Starter</h3>
+                <p class="price">$9 <span>/month</span></p>
+                <ul>
+                    <li>Basic face analysis</li>
+                    <li>Weekly routines</li>
+                    <li>Chat access</li>
+                </ul>
+                <button class="primary-btn">Start Starter</button>
+            </div>
+
+            <div class="price-card popular">
+                <div class="tag">Most Popular</div>
+                <h3>Pro Max</h3>
+                <p class="price">$19 <span>/month</span></p>
+                <ul>
+                    <li>Advanced face scoring</li>
+                    <li>Daily looksmax tasks</li>
+                    <li>Unlimited AI chat</li>
+                    <li>Personal improvement roadmap</li>
+                </ul>
+                <button class="primary-btn">Start Pro Max</button>
+            </div>
+
+            <div class="price-card">
+                <h3>Elite</h3>
+                <p class="price">$49 <span>/month</span></p>
+                <ul>
+                    <li>Everything in Pro</li>
+                    <li>Full transformation plan</li>
+                    <li>AI stylist & grooming</li>
+                </ul>
+                <button class="primary-btn">Start Elite</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>How does the AI analyze my face?</h3>
+            <p>The model uses symmetry, ratios, angles, and texture scoring.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Is this safe?</h3>
+            <p>100% secure. No photos are shared publicly.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 MOGX. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Chat Screen -->
+    <div id="chat-screen" class="chat-screen hidden">
+        <button id="backBtn" class="back-btn">← Back</button>
+
+        <iframe class="chat-iframe"
+            src="https://cdn.botpress.cloud/webchat/v2/shareable.html?botId=your-bot-id">
+        </iframe>
     </div>
-</div>
 
+    <script src="script.js"></script>
 </body>
 </html>
