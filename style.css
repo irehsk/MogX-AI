@@ -1,26 +1,37 @@
 /* GLOBAL */
 body {
     margin: 0;
-    background: #0a0a0a;
+    background: #000;
     font-family: 'SF Pro Display', sans-serif;
     color: white;
-    overflow-x: hidden;
+    overflow: hidden;
+}
+
+section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.6s ease;
 }
 
 .hidden { opacity: 0; pointer-events: none; }
 .show { opacity: 1; pointer-events: auto; }
 
-section {
-    transition: opacity 0.7s ease;
+/* BEAUTIFUL GRADIENT BACKGROUND */
+#landing, #chatScreen {
+    background: radial-gradient(at 20% 20%, rgba(120, 70, 255, 0.25), transparent 60%),
+                radial-gradient(at 80% 80%, rgba(255, 70, 180, 0.25), transparent 60%),
+                #0a0a0a;
 }
 
-/* NAVIGATION */
+/* NAVBAR */
 .navbar {
     width: 100%;
     padding: 24px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 20;
 }
 
 .logo {
@@ -30,7 +41,7 @@ section {
 }
 
 .logo span {
-    background: linear-gradient(90deg, #8e2de2, #4a00e0);
+    background: linear-gradient(90deg, #9d4dff, #5c1fff);
     -webkit-background-clip: text;
     color: transparent;
 }
@@ -46,7 +57,7 @@ section {
     opacity: 1;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
     text-align: center;
     margin-top: 140px;
@@ -68,7 +79,7 @@ section {
     margin-top: 40px;
     padding: 16px 40px;
     font-size: 18px;
-    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    background: linear-gradient(135deg, #9d4dff, #5c1fff);
     border: none;
     border-radius: 12px;
     color: white;
@@ -78,10 +89,10 @@ section {
 
 .cta-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(100, 50, 255, 0.7);
+    box-shadow: 0 0 25px rgba(100, 50, 255, 0.9);
 }
 
-/* CHAT SCREEN */
+/* CHAT SCREEN LAYOUT */
 .chat-nav .back-btn {
     background: transparent;
     border: 1px solid rgba(255,255,255,0.2);
@@ -93,37 +104,24 @@ section {
 }
 
 .chat-nav .back-btn:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.12);
 }
 
-.chat-header {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.chat-title {
-    font-size: 38px;
-    font-weight: 700;
-}
-
-.chat-sub {
-    margin-top: 8px;
-    opacity: 0.5;
-    font-size: 16px;
-}
-
-/* CHATBOT FRAME */
-.chat-container {
+/* FULLSCREEN CHAT */
+.chat-wrapper {
     width: 100%;
+    height: calc(100% - 100px);
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    align-items: center;
+    margin-top: 0;
+    padding: 0 40px 40px;
 }
 
 .chatbot-frame {
-    width: 90%;
-    height: 80vh;
+    width: 100%;
+    height: 100%;
     border: none;
-    border-radius: 18px;
-    box-shadow: 0 0 80px rgba(100, 50, 255, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 0 80px rgba(120, 70, 255, 0.4);
 }
