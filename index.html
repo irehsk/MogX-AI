@@ -1,129 +1,83 @@
-/* GLOBAL */
-body {
-    margin: 0;
-    background: #0a0a0a;
-    font-family: 'SF Pro Display', sans-serif;
-    color: white;
-    overflow-x: hidden;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOGX – AI Looksmax Coach</title>
 
-.hidden { opacity: 0; pointer-events: none; }
-.show { opacity: 1; pointer-events: auto; }
+    <!-- SF PRO DISPLAY FONTS -->
+    <style>
+        @font-face {
+            font-family: 'SF Pro Display';
+            src: url('assets/fonts/SFPRODISPLAYREGULAR.OTF');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'SF Pro Display';
+            src: url('assets/fonts/SFPRODISPLAYMEDIUM.OTF');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'SF Pro Display';
+            src: url('assets/fonts/SFPRODISPLAYBOLD.OTF');
+            font-weight: 700;
+        }
+    </style>
 
-section {
-    transition: opacity 0.7s ease;
-}
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-/* NAVIGATION */
-.navbar {
-    width: 100%;
-    padding: 24px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    <!-- LANDING PAGE -->
+    <section id="landing" class="show">
+        <nav class="navbar">
+            <div class="logo">MOG<span>X</span></div>
 
-.logo {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
+            <div class="nav-links">
+                <a href="#">About</a>
+                <a href="#">Pricing</a>
+                <a href="#">FAQ</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Products</a>
+            </div>
+        </nav>
 
-.logo span {
-    background: linear-gradient(90deg, #8e2de2, #4a00e0);
-    -webkit-background-clip: text;
-    color: transparent;
-}
+        <div class="hero">
+            <h1 class="hero-title">Your AI Looksmax<br> & Glow-Up Coach</h1>
+            <p class="hero-sub">Smart. Personalized. Science-backed.</p>
 
-.nav-links a {
-    margin-left: 28px;
-    font-size: 15px;
-    opacity: 0.8;
-    transition: 0.3s;
-}
+            <button id="getStarted" class="cta-btn">Get Started</button>
+        </div>
+    </section>
 
-.nav-links a:hover {
-    opacity: 1;
-}
+    <!-- CHAT SCREEN -->
+    <section id="chatScreen" class="hidden">
+        <nav class="navbar chat-nav">
+            <button id="backBtn" class="back-btn">← Back</button>
 
-/* HERO SECTION */
-.hero {
-    text-align: center;
-    margin-top: 140px;
-}
+            <div class="nav-links">
+                <a href="#">About</a>
+                <a href="#">Pricing</a>
+                <a href="#">FAQ</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Products</a>
+            </div>
+        </nav>
 
-.hero-title {
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 1.1;
-}
+        <div class="chat-header">
+            <h1 class="chat-title">MOGX AI Chatbot</h1>
+            <p class="chat-sub">Your personal looksmax & glow-up assistant.</p>
+        </div>
 
-.hero-sub {
-    margin-top: 15px;
-    opacity: 0.6;
-    font-size: 18px;
-}
+        <div class="chat-container">
+            <iframe 
+                src="YOUR_BOTPRESS_URL"
+                allow="clipboard-read; clipboard-write"
+                class="chatbot-frame">
+            </iframe>
+        </div>
+    </section>
 
-.cta-btn {
-    margin-top: 40px;
-    padding: 16px 40px;
-    font-size: 18px;
-    background: linear-gradient(135deg, #8e2de2, #4a00e0);
-    border: none;
-    border-radius: 12px;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.cta-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(100, 50, 255, 0.7);
-}
-
-/* CHAT SCREEN */
-.chat-nav .back-btn {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 8px 18px;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.chat-nav .back-btn:hover {
-    background: rgba(255,255,255,0.1);
-}
-
-.chat-header {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.chat-title {
-    font-size: 38px;
-    font-weight: 700;
-}
-
-.chat-sub {
-    margin-top: 8px;
-    opacity: 0.5;
-    font-size: 16px;
-}
-
-/* CHATBOT FRAME */
-.chat-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.chatbot-frame {
-    width: 90%;
-    height: 80vh;
-    border: none;
-    border-radius: 18px;
-    box-shadow: 0 0 80px rgba(100, 50, 255, 0.4);
-}
+    <script src="script.js"></script>
+</body>
+</html>
