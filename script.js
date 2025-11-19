@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   // Subscription buttons
   const subscribeButtons = document.querySelectorAll('#ctaSubscribe, #subscribeTop, #subscribePricing');
   subscribeButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      window.location.href = 'https://your-warp-subscription-link.com'; // Replace with Warp/WAPT link
+      window.location.href = 'https://your-warp-subscription-link.com'; // Replace
     });
   });
 
@@ -19,13 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Chatbot toggle
-  const chatWidget = document.getElementById('moogx-chat-widget');
-  const chatToggle = document.getElementById('moogx-chat-toggle');
-  chatToggle.addEventListener('click', () => {
-    chatWidget.classList.toggle('open');
-  });
-
   // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Fade transition to chatbot
+  const getStartedBtns = document.querySelectorAll('#getStartedBtn, #getStartedBtn2');
+  getStartedBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.body.style.transition = 'opacity 0.5s';
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        window.location.href = 'chatbot.html';
+      }, 500);
+    });
+  });
+
 });
