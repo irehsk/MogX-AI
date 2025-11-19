@@ -1,203 +1,169 @@
-/* GLOBAL */
-* {
+/* GLOBAL SETUP */
+body {
   margin: 0;
   padding: 0;
+  background: #05030f;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+* {
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  background: #03040a;
-  color: white;
-  overflow-x: hidden;
-}
-
-/* LOGO */
-.logo {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
-.logo-x {
-  background: linear-gradient(90deg, #7f5eff, #00d2ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* TOPBAR */
-.topbar {
+/* BACKGROUND LIGHTING (Inspired by Your UI Screenshot) */
+.global-bg {
   position: fixed;
-  top: 20px;
-  left: 25px;
-  right: 25px;
-  z-index: 100;
+  inset: 0;
+  background: radial-gradient(ellipse at top right,
+      #6e42ff40 0%,
+      transparent 55%),
+    radial-gradient(ellipse at bottom left,
+      #4d2aff30 0%,
+      transparent 60%);
+  z-index: -1;
+  filter: blur(60px);
+}
+
+/* SCREEN HANDLING */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.screen.visible {
+  display: block;
+  opacity: 1;
+}
+
+/* LANDING PAGE */
+.topbar {
+  padding: 30px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* NAV BUTTONS */
-.top-nav {
-  display: flex;
-  gap: 10px;
-}
-
-.nav-btn {
-  padding: 8px 14px;
-  border-radius: 10px;
-  font-weight: 700;
-  cursor: pointer;
-  border: none;
-  font-size: 14px;
-}
-
-.nav-btn.ghost {
-  background: rgba(255,255,255,0.06);
-}
-
-.nav-btn.solid {
-  background: linear-gradient(90deg, #7f5eff, #00d2ff);
-  color: #041126;
-}
-
-/* LANDING PAGE */
-.landing {
-  position: relative;
-  min-height: 100vh;
-  padding: 120px 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: url("assets/magicpattern-65O4Dw6-xLg-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.landing-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-}
-
-.landing-inner {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  max-width: 900px;
-}
-
-.landing-title {
-  font-size: 48px;
+.logo {
+  font-size: 32px;
   font-weight: 800;
-  line-height: 1.1;
+  letter-spacing: -1px;
 }
 
-.highlight {
-  color: #d9e3ff;
-}
-
-.logo-x-inline {
-  background: linear-gradient(90deg, #7f5eff, #00d2ff);
+.logo .x {
+  background: linear-gradient(90deg, #a78bfa, #c084fc);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
-.landing-sub {
-  margin-top: 14px;
-  color: #c8d2e5;
-  font-size: 16px;
+.actions .btn {
+  margin-left: 15px;
+}
+
+.landing-center {
+  text-align: center;
+  margin-top: 12vh;
+}
+
+.title {
+  font-size: 46px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 18px;
+  opacity: 0.7;
 }
 
 .start-btn {
-  margin-top: 26px;
-  padding: 14px 24px;
-  background: linear-gradient(90deg, #7f5eff, #00d2ff);
-  border: none;
-  border-radius: 12px;
-  font-weight: 800;
-  font-size: 17px;
-  cursor: pointer;
-  color: #010914;
+  margin-top: 40px;
+  padding: 15px 40px;
+  font-size: 18px;
 }
 
-/* TRANSITION */
-.landing.fade-out {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  pointer-events: none;
+/* BUTTONS */
+.btn {
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, #9f7aea, #805ad5);
+  color: white;
+  box-shadow: 0 0 20px #7c40ff50;
+}
+
+.btn.ghost {
+  background: rgba(255,255,255,0.05);
+  color: #cfcfff;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.btn.primary:hover {
+  box-shadow: 0 0 25px #a070ff80;
+  transform: translateY(-2px);
+}
+
+.btn.ghost:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+.btn.small {
+  padding: 8px 16px;
+  font-size: 14px;
 }
 
 /* CHAT SCREEN */
-.chat-screen {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, #0a0d1f, #03040a);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.6s ease;
-  display: flex;
-  flex-direction: column;
-  padding: 90px 20px 20px;
-  z-index: 200;
-}
-
-.chat-screen.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* CHAT HEADER */
-.chat-top {
+.chat-header {
+  padding: 25px 35px;
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding-bottom: 10px;
-}
-
-.chat-title {
+  gap: 20px;
   font-size: 20px;
   font-weight: 700;
 }
 
-.back-btn {
-  background: none;
-  color: #c8d2e5;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+.chat-title .x {
+  background: linear-gradient(90deg, #a78bfa, #c084fc);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-/* CHAT WRAPPER */
-.chat-wrapper {
-  margin-top: 10px;
-  position: relative;
-  height: calc(100vh - 150px);
-  border-radius: 0;
+/* GLASS CONTAINER (Inspired from the Uploaded UI) */
+.glass-panel {
+  width: 88%;
+  height: 78%;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 32px;
+  backdrop-filter: blur(28px) brightness(1.2);
+  background: rgba(20, 15, 40, 0.35);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow:
+    inset 0 0 30px rgba(255,255,255,0.05),
+    0 0 50px rgba(120, 60, 255, 0.2);
   overflow: hidden;
 }
 
-/* Gradient Glow */
-.chat-glow {
-  position: absolute;
-  inset: -20%;
-  background: radial-gradient(circle, rgba(127,94,255,0.2), rgba(0,210,255,0.12), transparent 70%);
-  filter: blur(80px);
-  animation: glowMove 20s ease-in-out infinite;
-  z-index: 0;
-}
-
-@keyframes glowMove {
-  0% { transform: translateY(-5%); }
-  50% { transform: translateY(5%); }
-  100% { transform: translateY(-5%); }
-}
-
-iframe {
+/* CHATBOT FRAME */
+#chatbot {
   width: 100%;
   height: 100%;
   border: none;
-  position: relative;
-  z-index: 2;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .title { font-size: 34px; }
+  .glass-panel { width: 94%; height: 70%; }
 }
