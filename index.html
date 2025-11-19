@@ -5,90 +5,61 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MOGX — AI Glow-Up Coach</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="MOGX — AI-powered looksmax coach. Personalized plans, 30/90 day transformations." />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=12" />
 </head>
+
 <body>
-  <!-- topbar -->
-  <header class="topbar" role="banner">
-    <div class="top-left">
-      <div class="logo">
-        <span class="logo-word">MOG</span><span class="logo-x">X</span>
-      </div>
-      <div class="brand-sub">AI Glow-Up Coach</div>
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="logo">
+      MOG<span class="logo-x">X</span>
     </div>
 
-    <nav class="top-right" aria-label="main-nav">
-      <button id="loginBtn" class="nav-btn ghost">Log in</button>
-      <button id="signupBtn" class="nav-btn solid">Sign up</button>
+    <nav class="top-nav">
+      <button class="nav-btn ghost">Login</button>
+      <button class="nav-btn solid">Sign Up</button>
     </nav>
   </header>
 
-  <!-- app wrapper -->
-  <main id="app">
-    <!-- LANDING -->
-    <section id="landing" class="landing-screen">
-      <div class="landing-overlay"></div>
-      <div class="landing-inner">
-        <h1 class="landing-title">
-          Build your glow-up. <span class="landing-highlight">Chat with <span class="logo-inline">MOG<span class="logo-x-inline">X</span></span>.</span>
-        </h1>
+  <!-- LANDING PAGE -->
+  <section id="landing" class="landing">
+    <div class="landing-overlay"></div>
 
-        <p class="landing-sub">
-          Personalized looksmax coaching — skin, hair, body, style & social confidence. Fast, practical, and tailored to you.
-        </p>
+    <div class="landing-inner">
+      <h1 class="landing-title">
+        Build your glow-up.<br>
+        <span class="highlight">Chat with MOG<span class="logo-x-inline">X</span>.</span>
+      </h1>
 
-        <div class="cta-row">
-          <button id="getStarted" class="btn btn-primary">Get Started — Begin My Plan</button>
-          <button id="learnMore" class="btn btn-ghost">How it works</button>
-        </div>
+      <p class="landing-sub">
+        AI-powered looksmaxing, grooming, fitness & confidence coaching.
+      </p>
 
-        <div class="landing-meta">
-          <span class="badge">30/90-day plans</span>
-          <span class="badge">Personalized</span>
-          <span class="badge">Science-backed</span>
-        </div>
-      </div>
-    </section>
+      <button class="start-btn" id="startBtn">
+        Get Started →
+      </button>
+    </div>
+  </section>
 
-    <!-- CHAT -->
-    <section id="chat" class="chat-screen" aria-hidden="true">
-      <div class="chat-container">
-        <div class="chat-header-row">
-          <button id="backBtn" class="back-btn" aria-label="Back to landing">←</button>
-          <div class="chat-title-wrap">
-            <div class="pill">MOGX Coach</div>
-            <div class="chat-sub">AI Glow-Up & Transformation</div>
-          </div>
-          <div class="chat-actions">
-            <div class="hint">Tip: type “start onboarding”</div>
-          </div>
-        </div>
+  <!-- CHAT PAGE -->
+  <section id="chat" class="chat-screen" aria-hidden="true">
+    <div class="chat-top">
+      <button id="backBtn" class="back-btn">← Back</button>
+      <h2 class="chat-title">MOGX AI Coach</h2>
+    </div>
 
-        <div class="chat-frame">
-          <iframe
-            id="botpressFrame"
-            src="https://cdn.botpress.cloud/webchat/v3.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/11/17/08/20251117080924-GJ1WECBQ.json"
-            title="MOGX Chat"
-            frameborder="0"
-            allow="microphone; clipboard-read; clipboard-write"
-            sandbox="allow-scripts allow-same-origin allow-forms">
-          </iframe>
+    <div class="chat-wrapper">
+      <div class="chat-glow"></div>
 
-          <div id="spinner" class="spinner" aria-hidden="true"></div>
-        </div>
+      <iframe
+        id="chatbot"
+        src="https://cdn.botpress.cloud/webchat/v3.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/11/17/08/20251117080924-GJ1WECBQ.json"
+        allow="microphone; clipboard-read; clipboard-write"
+      ></iframe>
+    </div>
+  </section>
 
-        <div class="chat-foot">
-          <div class="foot-left">Personalized plans • Daily micro-tasks • Progress tracking</div>
-          <div class="foot-right">v1.0</div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <script src="./script.js"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>
