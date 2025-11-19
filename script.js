@@ -1,24 +1,15 @@
-const landing = document.getElementById("landing");
-const chatScreen = document.getElementById("chatScreen");
-const getStarted = document.getElementById("getStarted");
-const backBtn = document.getElementById("backBtn");
+const chatScreen = document.getElementById("chat-screen");
 
-getStarted.addEventListener("click", () => {
-    landing.classList.remove("show");
-    landing.classList.add("hidden");
-
+function openChat() {
+    chatScreen.style.display = "block";
     setTimeout(() => {
-        chatScreen.classList.remove("hidden");
-        chatScreen.classList.add("show");
-    }, 450);
-});
+        chatScreen.style.opacity = "1";
+    }, 20);
+}
 
-backBtn.addEventListener("click", () => {
-    chatScreen.classList.remove("show");
-    chatScreen.classList.add("hidden");
-
+function closeChat() {
+    chatScreen.style.opacity = "0";
     setTimeout(() => {
-        landing.classList.remove("hidden");
-        landing.classList.add("show");
-    }, 450);
-});
+        chatScreen.style.display = "none";
+    }, 500);
+}
