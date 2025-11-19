@@ -1,146 +1,129 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MOGX — Your Personal AI Looksmax & Glow-Up Coach</title>
+/* GLOBAL */
+body {
+    margin: 0;
+    background: #0a0a0a;
+    font-family: 'SF Pro Display', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
 
-  <!-- Plus Jakarta Sans -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+.hidden { opacity: 0; pointer-events: none; }
+.show { opacity: 1; pointer-events: auto; }
 
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- Ambient background gradients and glow -->
-  <div class="ambient-bg" aria-hidden="true"></div>
+section {
+    transition: opacity 0.7s ease;
+}
 
-  <!-- Page container -->
-  <div class="page-wrap">
+/* NAVIGATION */
+.navbar {
+    width: 100%;
+    padding: 24px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    <!-- Top rounded container (like screenshot) -->
-    <div class="rounded-stage">
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
 
-      <!-- NAV -->
-      <header class="nav">
-        <div class="nav-inner">
-          <div class="brand">
-            <div class="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="gradMark" x1="0" x2="1">
-                    <stop offset="0" stop-color="#9b7bff"/>
-                    <stop offset="1" stop-color="#7c5bff"/>
-                  </linearGradient>
-                </defs>
-                <circle cx="12" cy="12" r="10" stroke="url(#gradMark)" stroke-width="1.5" opacity="0.95"/>
-                <path d="M7 12h10M12 7v10" stroke="url(#gradMark)" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="brand-text">MOG<span class="x">X</span></div>
-          </div>
+.logo span {
+    background: linear-gradient(90deg, #8e2de2, #4a00e0);
+    -webkit-background-clip: text;
+    color: transparent;
+}
 
-          <nav class="nav-links" aria-label="Primary">
-            <a href="#about">About Us</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#faq">FAQ</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#products">Products</a>
-          </nav>
+.nav-links a {
+    margin-left: 28px;
+    font-size: 15px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
 
-          <div class="nav-cta">
-            <button class="btn ghost" id="loginTop">Login</button>
-            <button class="btn solid" id="signupTop">Sign Up</button>
-          </div>
-        </div>
-      </header>
+.nav-links a:hover {
+    opacity: 1;
+}
 
-      <!-- HERO -->
-      <section class="hero">
-        <div class="hero-inner">
-          <div class="tag-pill"><span class="new">NEW</span> Latest integration just arrived</div>
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    margin-top: 140px;
+}
 
-          <h1 class="hero-head">
-            Your Personal AI Looksmax &<br />
-            Glow-Up Coach.
-          </h1>
+.hero-title {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.1;
+}
 
-          <p class="hero-sub">
-            A personalized coaching assistant for grooming, style, skincare and confidence — powered by advanced AI.
-          </p>
+.hero-sub {
+    margin-top: 15px;
+    opacity: 0.6;
+    font-size: 18px;
+}
 
-          <div class="hero-ctas">
-            <button class="btn big primary" id="startFree">Start For Free</button>
-            <button class="btn big ghost" id="learnMore">Learn More</button>
-            <button class="btn small outline" id="watchDemo">Watch Demo</button>
-          </div>
+.cta-btn {
+    margin-top: 40px;
+    padding: 16px 40px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
 
-          <div class="hero-meta">
-            <span class="meta-pill">Trusted by pros • Privacy-first • 30-day trial</span>
-          </div>
-        </div>
-      </section>
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(100, 50, 255, 0.7);
+}
 
-      <!-- Showcase device area -->
-      <section class="showcase">
-        <div class="device-frame">
-          <!-- mock UI surface with neon rim -->
-          <div class="canvas-glass">
-            <div class="canvas-header">
-              <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-              <div class="canvas-search">
-                <input placeholder="Search" />
-                <button class="icon">🔍</button>
-              </div>
-            </div>
+/* CHAT SCREEN */
+.chat-nav .back-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 18px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-            <!-- Large center greeting like screenshot -->
-            <div class="canvas-body">
-              <h2 class="canvas-greet">Hello Ghazaleh, Good Morning.</h2>
-              <p class="canvas-sub">Ask with instant and fast access to global information</p>
+.chat-nav .back-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
 
-              <div class="prompt-card">
-                <textarea placeholder="What do you want to know?" rows="1" id="fakeInput"></textarea>
-                <button class="send-btn" id="openChat">▲</button>
-              </div>
+.chat-header {
+    margin-top: 40px;
+    text-align: center;
+}
 
-              <div class="pills-row">
-                <button class="pill">⚡ Deep Research</button>
-                <button class="pill">🖼 Create Images</button>
-                <button class="pill">📁 Read Files</button>
-                <button class="pill">🌐 Search in Web</button>
-              </div>
-            </div>
+.chat-title {
+    font-size: 38px;
+    font-weight: 700;
+}
 
-            <div class="canvas-footer">
-              <div class="mini-legend">Site Overview • Dashboard preview</div>
-            </div>
-          </div>
-        </div>
+.chat-sub {
+    margin-top: 8px;
+    opacity: 0.5;
+    font-size: 16px;
+}
 
-        <!-- small CTA row below device -->
-        <div class="below-ctas">
-          <button class="btn ghost" id="exploreFeatures">Explore Features</button>
-          <button class="btn outline" id="contactSales">Contact Sales</button>
-        </div>
-      </section>
+/* CHATBOT FRAME */
+.chat-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
 
-      <footer class="mini-footer">© <span id="year"></span> MOGX — All rights reserved.</footer>
-    </div> <!-- end rounded-stage -->
-
-  </div> <!-- end page-wrap -->
-
-  <!-- Chat modal / Botpress iframe (keeps iframe but in modal so it doesn't get blocked on page load) -->
-  <div class="chat-modal" id="chatModal" aria-hidden="true">
-    <div class="chat-modal-backdrop" id="chatBackdrop"></div>
-    <div class="chat-modal-panel" role="dialog" aria-modal="true" aria-label="MOGX Chatbot">
-      <button class="modal-close" id="closeChat" title="Close chat">✕</button>
-      <div class="chat-frame-wrap">
-        <!-- Replace src with your Botpress webchat URL (webchat/embed URL). -->
-        <iframe id="botIframe" src="https://cdn.botpress.cloud/webchat/v2/index.html?botId=YOUR_BOT_ID" title="MOGX Chatbot" frameborder="0" allow="microphone; encrypted-media"></iframe>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+.chatbot-frame {
+    width: 90%;
+    height: 80vh;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 0 80px rgba(100, 50, 255, 0.4);
+}
