@@ -1,78 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MOGX – AI Looksmax Coach</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MogX – AI Glow-Up Coach</title>
 
-    <!-- SF PRO DISPLAY -->
-    <style>
-        @font-face {
-            font-family: 'SF Pro Display';
-            src: url('assets/fonts/SFPRODISPLAYREGULAR.OTF');
-            font-weight: 400;
-        }
-        @font-face {
-            font-family: 'SF Pro Display';
-            src: url('assets/fonts/SFPRODISPLAYMEDIUM.OTF');
-            font-weight: 500;
-        }
-        @font-face {
-            font-family: 'SF Pro Display';
-            src: url('assets/fonts/SFPRODISPLAYBOLD.OTF');
-            font-weight: 700;
-        }
-    </style>
+<link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- LANDING PAGE -->
-    <section id="landing" class="show">
-        <nav class="navbar">
-            <div class="logo">MOG<span>X</span></div>
+<div class="bg-gradient"></div>
 
-            <div class="nav-links">
-                <a href="#">About</a>
-                <a href="#">Pricing</a>
-                <a href="#">FAQ</a>
-                <a href="#">Testimonials</a>
-                <a href="#">Products</a>
-            </div>
-        </nav>
+<!-- Sidebar -->
+<div class="sidebar glass">
+    <div class="logo">Mog<span class="logo-x">X</span></div>
 
-        <div class="hero">
-            <h1 class="hero-title">Your AI Looksmax<br> & Glow-Up Coach</h1>
-            <p class="hero-sub">Smart. Personalized. Science-backed.</p>
+    <nav class="nav-links">
+        <a href="#">Get Started</a>
+        <a href="#">FAQ</a>
+        <a href="#">About us</a>
+        <a href="#">Subscription</a>
+        <a href="#">Testimonials</a>
+    </nav>
+</div>
 
-            <button id="getStarted" class="cta-btn">Get Started</button>
-        </div>
-    </section>
+<!-- Main content -->
+<div class="main">
+    <h1>Your AI Looksmαx &<br>Glow-Up Coach</h1>
 
-    <!-- CHAT SCREEN -->
-    <section id="chatScreen" class="hidden">
-        <nav class="navbar chat-nav">
-            <button id="backBtn" class="back-btn">← Back</button>
+    <button class="btn-primary glass">Get Started</button>
 
-            <div class="nav-links">
-                <a href="#">About</a>
-                <a href="#">Pricing</a>
-                <a href="#">FAQ</a>
-                <a href="#">Testimonials</a>
-                <a href="#">Products</a>
-            </div>
-        </nav>
+    <div class="auth-buttons">
+        <button class="btn glass">log in</button>
+        <button class="btn glass">sign in</button>
+    </div>
+</div>
 
-        <div class="chat-wrapper">
-            <iframe 
-                src="YOUR_BOTPRESS_URL"
-                allow="clipboard-read; clipboard-write"
-                class="chatbot-frame">
-            </iframe>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
 </body>
 </html>
