@@ -1,60 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MOGX — AI Looksmax Coach</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MOGX — Your Personal AI Looksmax & Glow-Up Coach</title>
 
+  <!-- Plus Jakarta Sans -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <!-- Ambient background gradients and glow -->
+  <div class="ambient-bg" aria-hidden="true"></div>
 
-<div class="global-bg"></div>
+  <!-- Page container -->
+  <div class="page-wrap">
 
-<!-- Landing Screen -->
-<section id="landing" class="screen visible">
-  <header class="topbar">
-    <div class="logo">MOG<span class="x">X</span></div>
+    <!-- Top rounded container (like screenshot) -->
+    <div class="rounded-stage">
 
-    <div class="actions">
-      <button class="btn ghost">Login</button>
-      <button class="btn primary">Sign Up</button>
+      <!-- NAV -->
+      <header class="nav">
+        <div class="nav-inner">
+          <div class="brand">
+            <div class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradMark" x1="0" x2="1">
+                    <stop offset="0" stop-color="#9b7bff"/>
+                    <stop offset="1" stop-color="#7c5bff"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="12" cy="12" r="10" stroke="url(#gradMark)" stroke-width="1.5" opacity="0.95"/>
+                <path d="M7 12h10M12 7v10" stroke="url(#gradMark)" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="brand-text">MOG<span class="x">X</span></div>
+          </div>
+
+          <nav class="nav-links" aria-label="Primary">
+            <a href="#about">About Us</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#products">Products</a>
+          </nav>
+
+          <div class="nav-cta">
+            <button class="btn ghost" id="loginTop">Login</button>
+            <button class="btn solid" id="signupTop">Sign Up</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="tag-pill"><span class="new">NEW</span> Latest integration just arrived</div>
+
+          <h1 class="hero-head">
+            Your Personal AI Looksmax &<br />
+            Glow-Up Coach.
+          </h1>
+
+          <p class="hero-sub">
+            A personalized coaching assistant for grooming, style, skincare and confidence — powered by advanced AI.
+          </p>
+
+          <div class="hero-ctas">
+            <button class="btn big primary" id="startFree">Start For Free</button>
+            <button class="btn big ghost" id="learnMore">Learn More</button>
+            <button class="btn small outline" id="watchDemo">Watch Demo</button>
+          </div>
+
+          <div class="hero-meta">
+            <span class="meta-pill">Trusted by pros • Privacy-first • 30-day trial</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Showcase device area -->
+      <section class="showcase">
+        <div class="device-frame">
+          <!-- mock UI surface with neon rim -->
+          <div class="canvas-glass">
+            <div class="canvas-header">
+              <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+              <div class="canvas-search">
+                <input placeholder="Search" />
+                <button class="icon">🔍</button>
+              </div>
+            </div>
+
+            <!-- Large center greeting like screenshot -->
+            <div class="canvas-body">
+              <h2 class="canvas-greet">Hello Ghazaleh, Good Morning.</h2>
+              <p class="canvas-sub">Ask with instant and fast access to global information</p>
+
+              <div class="prompt-card">
+                <textarea placeholder="What do you want to know?" rows="1" id="fakeInput"></textarea>
+                <button class="send-btn" id="openChat">▲</button>
+              </div>
+
+              <div class="pills-row">
+                <button class="pill">⚡ Deep Research</button>
+                <button class="pill">🖼 Create Images</button>
+                <button class="pill">📁 Read Files</button>
+                <button class="pill">🌐 Search in Web</button>
+              </div>
+            </div>
+
+            <div class="canvas-footer">
+              <div class="mini-legend">Site Overview • Dashboard preview</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- small CTA row below device -->
+        <div class="below-ctas">
+          <button class="btn ghost" id="exploreFeatures">Explore Features</button>
+          <button class="btn outline" id="contactSales">Contact Sales</button>
+        </div>
+      </section>
+
+      <footer class="mini-footer">© <span id="year"></span> MOGX — All rights reserved.</footer>
+    </div> <!-- end rounded-stage -->
+
+  </div> <!-- end page-wrap -->
+
+  <!-- Chat modal / Botpress iframe (keeps iframe but in modal so it doesn't get blocked on page load) -->
+  <div class="chat-modal" id="chatModal" aria-hidden="true">
+    <div class="chat-modal-backdrop" id="chatBackdrop"></div>
+    <div class="chat-modal-panel" role="dialog" aria-modal="true" aria-label="MOGX Chatbot">
+      <button class="modal-close" id="closeChat" title="Close chat">✕</button>
+      <div class="chat-frame-wrap">
+        <!-- Replace src with your Botpress webchat URL (webchat/embed URL). -->
+        <iframe id="botIframe" src="https://cdn.botpress.cloud/webchat/v2/index.html?botId=YOUR_BOT_ID" title="MOGX Chatbot" frameborder="0" allow="microphone; encrypted-media"></iframe>
+      </div>
     </div>
-  </header>
-
-  <div class="landing-center">
-    <h1 class="title">
-      Your Premium AI Glow-Up & Looksmax Coach
-    </h1>
-    <p class="subtitle">
-      Aesthetic, grooming, style, confidence — fully personalized using AI.
-    </p>
-
-    <button id="startBtn" class="btn start-btn">Get Started</button>
   </div>
-</section>
 
-
-<!-- Chat Screen -->
-<section id="chat" class="screen">
-  <header class="chat-header">
-    <button id="backBtn" class="btn ghost small">← Back</button>
-    <div class="chat-title">MOG<span class="x">X</span> Chat</div>
-  </header>
-
-  <div class="chat-container glass-panel">
-    <iframe 
-      id="chatbot"
-      src="https://botpress.com"
-      frameborder="0"
-      allow="microphone; encrypted-media"
-    ></iframe>
-  </div>
-</section>
-
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
