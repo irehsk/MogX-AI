@@ -1,165 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOGX – AI Looksmax Coach</title>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- SF PRO DISPLAY -->
-    <link rel="preload" href="SFPRODISPLAYREGULAR.OTF" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="SFPRODISPLAYBOLD.OTF" as="font" type="font/otf" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOOGX — AI Looksmaxing Chatbot</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">MOG<span>X</span></div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">MOOGX</a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="header-ctas">
+        <button id="subscribeTop" class="btn btn-primary">Subscribe</button>
+        <a href="#moogx-chat-widget" class="btn btn-ghost">Get Started</a>
+      </div>
+    </div>
+  </header>
 
-        <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#product">Product</a></li>
-        </ul>
-
-        <button class="nav-cta" onclick="scrollToChat()">Get Started</button>
-    </nav>
-
-
-    <!-- HERO -->
-    <section id="hero" class="hero">
-        <div class="hero-content glass-box fade-in">
-            <h1>Your AI Looksmax<br> & Glow-Up Coach</h1>
-            <p>MOGX analyzes your face, builds routines, and gives personalized improvement plans using AI.</p>
-            <button class="primary-btn" onclick="scrollToChat()">Start Your Glow-Up</button>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1>MOOGX — AI for Looksmaxing</h1>
+        <p class="lead">
+          Personalized, science-backed advice to upgrade your grooming, skincare, fitness and style —
+          powered by AI.
+        </p>
+        <div class="hero-cta">
+          <a href="#moogx-chat-widget" class="btn btn-primary large">Get Started — Chat</a>
+          <button id="ctaSubscribe" class="btn btn-outline">Subscribe — $12 / month</button>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-
-    <!-- ABOUT -->
-    <section id="about" class="about">
-        <h2>What is MOGX?</h2>
-        <p>MOGX is an AI-powered coaching system that enhances your looks, grooming, health, and style using premium algorithms.</p>
-    </section>
-
-
-    <!-- PRODUCT -->
-    <section id="product" class="product">
-        <div class="glass-box product-card">
-            <h3>✨ AI Facial Analysis</h3>
-            <p>Upload a picture. MOGX instantly scans symmetry, jaw ratio, skin quality, pigmentation, and more.</p>
+  <!-- FEATURES -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="section-title">What MOOGX Does</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="icon">🤖</div>
+          <h3>AI-powered plans</h3>
+          <p>Personalized routines for skincare, hair, posture, and wardrobe.</p>
         </div>
-
-        <div class="glass-box product-card">
-            <h3>🔥 Personalized Daily Plan</h3>
-            <p>You get a custom improvement guide — skincare, gym, grooming, hair, posture, lighting, etc.</p>
+        <div class="feature">
+          <div class="icon">📈</div>
+          <h3>Progress tracking</h3>
+          <p>Track incremental wins — measurable changes over weeks.</p>
         </div>
-
-        <div class="glass-box product-card">
-            <h3>🧠 Real-Time Coaching</h3>
-            <p>Ask your AI coach anything, anytime. Live chat. Your personal glow-up companion.</p>
+        <div class="feature">
+          <div class="icon">🔬</div>
+          <h3>Evidence-based</h3>
+          <p>Tips grounded in science and best grooming practices.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-
-    <!-- PRICING -->
-    <section id="pricing" class="pricing">
-        <h2>Pricing</h2>
-
-        <div class="pricing-grid">
-
-            <div class="glass-box price-card">
-                <h3>Starter</h3>
-                <p class="price">$9/mo</p>
-                <ul>
-                    <li>Basic AI Chat</li>
-                    <li>Daily Glow-Up Tips</li>
-                    <li>Limited Face Analysis</li>
-                </ul>
-                <button class="secondary-btn">Choose Plan</button>
-            </div>
-
-            <div class="glass-box price-card highlight">
-                <h3>Pro</h3>
-                <p class="price">$19/mo</p>
-                <ul>
-                    <li>Unlimited Coaching</li>
-                    <li>Full Face Analysis</li>
-                    <li>AI Routine Builder</li>
-                    <li>Priority Updates</li>
-                </ul>
-                <button class="primary-btn">Choose Plan</button>
-            </div>
-
-            <div class="glass-box price-card">
-                <h3>Elite</h3>
-                <p class="price">$39/mo</p>
-                <ul>
-                    <li>Everything in Pro</li>
-                    <li>VIP Support</li>
-                    <li>Weekly Personalized Review</li>
-                </ul>
-                <button class="secondary-btn">Choose Plan</button>
-            </div>
-
+  <!-- PRICING -->
+  <section id="pricing" class="section section-alt">
+    <div class="container narrow">
+      <h2 class="section-title">Subscription</h2>
+      <p class="muted">Single plan. Everything included.</p>
+      <div class="pricing-card">
+        <div class="pricing-left">
+          <h3>MOOGX Core</h3>
+          <div class="monthly">
+            <span class="big-price">$12</span>
+            <span class="per-month">/month</span>
+          </div>
+          <p class="muted">Billed monthly. Cancel anytime.</p>
+          <ul class="checklist">
+            <li>Unlimited chatbot access</li>
+            <li>Personalized routines</li>
+            <li>Weekly progress check-ins</li>
+            <li>Priority tips & updates</li>
+          </ul>
+          <div class="pricing-actions">
+            <button id="subscribePricing" class="btn btn-primary large">Subscribe</button>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2 class="section-title">Testimonials</h2>
+      <div class="testimonials" id="testimonialsList">
+        <blockquote class="testimonial active">
+          <p>"MOOGX helped me fix my skincare routine and I actually see results."</p>
+          <footer>— Arjun, 24</footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p>"Clear steps, useful reminders. Worth the subscription."</p>
+          <footer>— Samira, 28</footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p>"Practical, not oversold. The personalized plans actually stuck."</p>
+          <footer>— Rohan, 30</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="faq">
-        <h2>FAQ</h2>
-
-        <div class="faq-item glass-box">
-            <h3>Is MOGX safe?</h3>
-            <p>100%. Your images never leave your device unless you permit.</p>
+  <!-- FAQ -->
+  <section id="faq" class="section section-alt">
+    <div class="container narrow">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">What does MOOGX do?</button>
+          <div class="faq-a">MOOGX creates personalized routines and daily steps for looks improvement delivered through AI.</div>
         </div>
-
-        <div class="faq-item glass-box">
-            <h3>Can MOGX really improve my looks?</h3>
-            <p>Yes. Our system is built on real biometric research.</p>
+        <div class="faq-item">
+          <button class="faq-q">How much is it?</button>
+          <div class="faq-a">One plan: <strong>$12 / month</strong>. Cancel anytime.</div>
         </div>
-    </section>
-
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="testimonials">
-        <h2>What users say</h2>
-
-        <div class="testimonial-grid">
-            <div class="glass-box testimonial">
-                <p>“Best AI coach I've ever used. My confidence skyrocketed.”</p>
-                <span>- Arman</span>
-            </div>
-
-            <div class="glass-box testimonial">
-                <p>“The routines were actually realistic. 10/10.”</p>
-                <span>- Dev</span>
-            </div>
-
-            <div class="glass-box testimonial">
-                <p>“MOGX feels like a personal trainer + dermatologist + stylist.”</p>
-                <span>- Ali</span>
-            </div>
+        <div class="faq-item">
+          <button class="faq-q">Is my data private?</button>
+          <div class="faq-a">Yes — we do not share your personal data.</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container narrow">
+      <h2 class="section-title">About MOOGX</h2>
+      <p class="muted">MOOGX was created to give people simple, science-backed guidance for improving how they look and feel.</p>
+    </div>
+  </section>
 
-    <!-- CHATBOT -->
-    <section id="chat" class="chat-section">
-        <h2>Your AI Coach</h2>
-        <div class="chat-container glass-box">
-            <iframe
-                src="https://cdn.botpress.cloud/webchat/v1/index.html?botId=<YOUR-BOT-ID>"
-                class="chat-iframe">
-            </iframe>
-        </div>
-    </section>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      © <span id="year"></span> MOOGX. All rights reserved.
+    </div>
+  </footer>
 
-    
-<script src="script.js"></script>
+  <!-- CHATBOT WIDGET -->
+  <div id="moogx-chat-widget">
+    <iframe
+      id="moogx-chat-iframe"
+      src="https://cdn.botpress.cloud/webchat/v3.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/11/17/08/20251117080924-GJ1WECBQ.json"
+      frameborder="0"
+    ></iframe>
+    <button id="moogx-chat-toggle">💬</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
