@@ -10,7 +10,7 @@ getStarted.addEventListener("click", () => {
     setTimeout(() => {
         chatScreen.classList.remove("hidden");
         chatScreen.classList.add("show");
-    }, 500);
+    }, 450);
 });
 
 backBtn.addEventListener("click", () => {
@@ -20,5 +20,5 @@ backBtn.addEventListener("click", () => {
     setTimeout(() => {
         landing.classList.remove("hidden");
         landing.classList.add("show");
-    }, 500);
+    }, 450);
 });
