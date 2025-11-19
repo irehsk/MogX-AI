@@ -7,18 +7,8 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- SF PRO DISPLAY -->
-    <style>
-        @font-face {
-            font-family: 'SF Pro Display';
-            src: url('SFPRODISPLAYREGULAR.OTF') format('opentype');
-            font-weight: 400;
-        }
-        @font-face {
-            font-family: 'SF Pro Display';
-            src: url('SFPRODISPLAYBOLD.OTF') format('opentype');
-            font-weight: 700;
-        }
-    </style>
+    <link rel="preload" href="SFPRODISPLAYREGULAR.OTF" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="SFPRODISPLAYBOLD.OTF" as="font" type="font/otf" crossorigin>
 </head>
 <body>
 
@@ -27,59 +17,149 @@
         <div class="logo">MOG<span>X</span></div>
 
         <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#product">Product</a></li>
         </ul>
 
-        <button class="nav-btn" onclick="openChat()">Get Started</button>
+        <button class="nav-cta" onclick="scrollToChat()">Get Started</button>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <h1 class="hero-title">
-            Your AI Looksmax <br> & Glow-Up Coach
-        </h1>
 
-        <p class="hero-sub">
-            Personalized improvements. Face ratio analysis.  
-            Style optimization. Glow-up roadmap.
-        </p>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+        <div class="hero-content glass-box fade-in">
+            <h1>Your AI Looksmax<br> & Glow-Up Coach</h1>
+            <p>MOGX analyzes your face, builds routines, and gives personalized improvement plans using AI.</p>
+            <button class="primary-btn" onclick="scrollToChat()">Start Your Glow-Up</button>
+        </div>
+    </section>
 
-        <button class="cta-btn" onclick="openChat()">Start Your Transformation</button>
 
-        <!-- Glassmorphism Feature Cards -->
-        <div class="features">
-            <div class="glass-card">
-                <h3>Face Analysis</h3>
-                <p>Get a professional AI breakdown of your facial structure.</p>
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <h2>What is MOGX?</h2>
+        <p>MOGX is an AI-powered coaching system that enhances your looks, grooming, health, and style using premium algorithms.</p>
+    </section>
+
+
+    <!-- PRODUCT -->
+    <section id="product" class="product">
+        <div class="glass-box product-card">
+            <h3>✨ AI Facial Analysis</h3>
+            <p>Upload a picture. MOGX instantly scans symmetry, jaw ratio, skin quality, pigmentation, and more.</p>
+        </div>
+
+        <div class="glass-box product-card">
+            <h3>🔥 Personalized Daily Plan</h3>
+            <p>You get a custom improvement guide — skincare, gym, grooming, hair, posture, lighting, etc.</p>
+        </div>
+
+        <div class="glass-box product-card">
+            <h3>🧠 Real-Time Coaching</h3>
+            <p>Ask your AI coach anything, anytime. Live chat. Your personal glow-up companion.</p>
+        </div>
+    </section>
+
+
+    <!-- PRICING -->
+    <section id="pricing" class="pricing">
+        <h2>Pricing</h2>
+
+        <div class="pricing-grid">
+
+            <div class="glass-box price-card">
+                <h3>Starter</h3>
+                <p class="price">$9/mo</p>
+                <ul>
+                    <li>Basic AI Chat</li>
+                    <li>Daily Glow-Up Tips</li>
+                    <li>Limited Face Analysis</li>
+                </ul>
+                <button class="secondary-btn">Choose Plan</button>
             </div>
 
-            <div class="glass-card">
-                <h3>Style Guide</h3>
-                <p>Hair, outfits, grooming tailored to your face type.</p>
+            <div class="glass-box price-card highlight">
+                <h3>Pro</h3>
+                <p class="price">$19/mo</p>
+                <ul>
+                    <li>Unlimited Coaching</li>
+                    <li>Full Face Analysis</li>
+                    <li>AI Routine Builder</li>
+                    <li>Priority Updates</li>
+                </ul>
+                <button class="primary-btn">Choose Plan</button>
             </div>
 
-            <div class="glass-card">
-                <h3>Glow-Up Plan</h3>
-                <p>Step-by-step weekly improvements for maximum results.</p>
+            <div class="glass-box price-card">
+                <h3>Elite</h3>
+                <p class="price">$39/mo</p>
+                <ul>
+                    <li>Everything in Pro</li>
+                    <li>VIP Support</li>
+                    <li>Weekly Personalized Review</li>
+                </ul>
+                <button class="secondary-btn">Choose Plan</button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <h2>FAQ</h2>
+
+        <div class="faq-item glass-box">
+            <h3>Is MOGX safe?</h3>
+            <p>100%. Your images never leave your device unless you permit.</p>
+        </div>
+
+        <div class="faq-item glass-box">
+            <h3>Can MOGX really improve my looks?</h3>
+            <p>Yes. Our system is built on real biometric research.</p>
+        </div>
+    </section>
+
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="testimonials">
+        <h2>What users say</h2>
+
+        <div class="testimonial-grid">
+            <div class="glass-box testimonial">
+                <p>“Best AI coach I've ever used. My confidence skyrocketed.”</p>
+                <span>- Arman</span>
+            </div>
+
+            <div class="glass-box testimonial">
+                <p>“The routines were actually realistic. 10/10.”</p>
+                <span>- Dev</span>
+            </div>
+
+            <div class="glass-box testimonial">
+                <p>“MOGX feels like a personal trainer + dermatologist + stylist.”</p>
+                <span>- Ali</span>
             </div>
         </div>
     </section>
 
-    <!-- CHATBOT SCREEN -->
-    <section id="chat-screen" class="chat-screen">
-        <button class="back-btn" onclick="closeChat()">← Back</button>
 
-        <div class="chat-wrapper">
+    <!-- CHATBOT -->
+    <section id="chat" class="chat-section">
+        <h2>Your AI Coach</h2>
+        <div class="chat-container glass-box">
             <iframe
-                src="YOUR_BOTPRESS_IFRAME_LINK_HERE"
-                class="chatbot-frame">
+                src="https://cdn.botpress.cloud/webchat/v1/index.html?botId=<YOUR-BOT-ID>"
+                class="chat-iframe">
             </iframe>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    
+<script src="script.js"></script>
 </body>
 </html>
