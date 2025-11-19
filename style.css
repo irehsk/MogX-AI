@@ -1,155 +1,203 @@
-/* ------------------------
-   GLOBAL
--------------------------*/
-:root{
-  --bg-dark:#04050b;
-  --muted:#b4c2d6;
-  --accent-1:#7f5eff;
-  --accent-2:#00d2ff;
-  --glass: rgba(255,255,255,0.06);
-  --radius:18px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  font-family: "Plus Jakarta Sans","Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-  background:var(--bg-dark);
-  color:#eef7ff;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  overflow-x:hidden;
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ------------------------
-   TOPBAR
--------------------------*/
-.topbar{
-  position:fixed;left:24px;right:24px;top:18px;z-index:120;
-  display:flex;justify-content:space-between;align-items:center;gap:12px;
-  pointer-events:auto;
-}
-.top-left{display:flex;align-items:center;gap:12px}
-.logo{font-weight:800;font-size:20px;display:flex;align-items:center;gap:0}
-.logo-word{color:#f6fbff;letter-spacing:0.6px}
-.logo-x{
-  background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  margin-left:4px;
-  font-weight:900;
-}
-.brand-sub{font-size:12px;color:var(--muted)}
-
-/* nav */
-.top-right{display:flex;gap:10px;align-items:center}
-.nav-btn{padding:8px 12px;border-radius:10px;font-weight:700;cursor:pointer;border:0}
-.nav-btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
-.nav-btn.solid{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#041126;box-shadow:0 10px 30px rgba(127,94,255,0.08)}
-
-/* ------------------------
-   LANDING SCREEN
--------------------------*/
-.landing-screen{
-  position:relative;
-  width:100%;
-  min-height:100vh;
-  display:flex;align-items:center;justify-content:center;
-  padding:120px 28px;
-  overflow:hidden;
-  background-image: url("assets/magicpattern-65O4Dw6-xLg-unsplash.jpg");
-  background-size:cover;
-  background-position:center;
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: #03040a;
+  color: white;
+  overflow-x: hidden;
 }
 
-/* slow aura overlay animation (Option A) */
-.landing-screen::before{
-  content:"";position:absolute;inset:-40% -20% -40% -20%;
-  background:linear-gradient(120deg, rgba(127,94,255,0.14), rgba(0,210,255,0.08), rgba(127,94,255,0.06));
-  filter:blur(80px);
-  animation:floatAura 18s linear infinite;
-  z-index:1;pointer-events:none;
-}
-@keyframes floatAura{
-  0%{transform:translateY(-6%) rotate(0deg)}
-  50%{transform:translateY(6%) rotate(3deg)}
-  100%{transform:translateY(-6%) rotate(0deg)}
+/* LOGO */
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
 }
 
-.landing-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(2,6,16,0.48), rgba(2,6,16,0.62));z-index:2}
-
-.landing-inner{
-  position:relative;z-index:6;max-width:980px;text-align:center;padding:48px 26px;
-  backdrop-filter: blur(4px);
+.logo-x {
+  background: linear-gradient(90deg, #7f5eff, #00d2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* title */
-.landing-title{font-size:48px;line-height:1.04;font-weight:800;margin-bottom:12px;color:#f6fbff}
-.landing-highlight{display:inline-block}
-.logo-inline{font-weight:800}
-.logo-x-inline{
-  background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  margin-left:6px;
+/* TOPBAR */
+.topbar {
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  right: 25px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* subtitle + cta */
-.landing-sub{color:var(--muted);font-size:16px;margin-top:8px;max-width:760px;margin-left:auto;margin-right:auto}
-.cta-row{margin-top:26px;display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
-.btn{border-radius:12px;padding:12px 18px;font-weight:800;cursor:pointer;border:0}
-.btn-primary{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#041126}
-.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
-.landing-meta{margin-top:18px;display:flex;gap:10px;justify-content:center;align-items:center}
-.badge{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-weight:700;color:var(--muted);font-size:13px}
-
-/* fade behavior (we will make landing absolute while fading) */
-.landing-screen.fade-out{opacity:0;pointer-events:none;position:absolute;top:0;left:0;width:100%;height:100vh;transition:opacity .7s ease-in-out}
-
-/* subtle heading micro-anim */
-.landing-title{transform-origin:center;animation:popIn .9s cubic-bezier(.2,.9,.3,1)}
-@keyframes popIn{0%{opacity:0;transform:translateY(6px) scale(.99)}100%{opacity:1;transform:translateY(0) scale(1)}}
-
-/* ------------------------
-   CHAT SCREEN
--------------------------*/
-.chat-screen{
-  position:fixed;top:0;left:0;width:100%;min-height:100vh;
-  display:flex;align-items:center;justify-content:center;padding:60px 20px;
-  background: linear-gradient(135deg, #0a0515 0%, #130b2e 35%, #1a093d 65%, #250a5c 100%);
-  opacity:0;pointer-events:none;z-index:40;transition:opacity .6s ease-in-out;
+/* NAV BUTTONS */
+.top-nav {
+  display: flex;
+  gap: 10px;
 }
-.chat-screen.active{opacity:1;pointer-events:auto}
 
-/* chat container - transparent shell (no grey) */
-.chat-container{width:100%;max-width:1250px;padding:0 16px;background:transparent;border:none;box-shadow:none}
-
-/* header row inside chat */
-.chat-header-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
-.back-btn{background:transparent;border:0;color:var(--muted);font-weight:700;font-size:18px;cursor:pointer;padding:8px 12px;border-radius:10px}
-.pill{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#041126;padding:8px 12px;border-radius:999px;font-weight:800}
-.chat-sub{color:var(--muted);font-size:13px}
-.hint{color:var(--muted);font-size:13px}
-
-/* big iframe frame */
-.chat-frame{width:100%;height:85vh;border-radius:16px;overflow:hidden;border:2px solid rgba(255,255,255,0.06);box-shadow:0 30px 80px rgba(2,8,20,0.6)}
-.chat-frame iframe{width:100%;height:100%;border:0;background:transparent;display:block}
-
-/* spinner (glow) */
-.spinner{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:110px;height:110px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(127,94,255,0.95), rgba(0,210,255,0.9) 45%, rgba(18,28,46,0) 60%);filter:blur(18px);z-index:60;animation:floaty 1.8s ease-in-out infinite;pointer-events:none}
-@keyframes floaty{0%{transform:translate(-50%,-50%) scale(.9)}50%{transform:translate(-50%,-48%) scale(1)}100%{transform:translate(-50%,-50%) scale(.9)}}
-
-/* chat footer */
-.chat-foot{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-top:12px;padding:6px 2px}
-
-/* ------------------------
-   RESPONSIVE
--------------------------*/
-@media (max-width:900px){
-  .landing-title{font-size:32px}
-  .landing-sub{font-size:15px}
-  .chat-frame{height:80vh}
+.nav-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
 }
-@media (max-width:520px){
-  .topbar{left:12px;right:12px;top:12px}
-  .landing-title{font-size:22px}
-  .cta-row{flex-direction:column}
-  .chat-frame{height:76vh}
+
+.nav-btn.ghost {
+  background: rgba(255,255,255,0.06);
+}
+
+.nav-btn.solid {
+  background: linear-gradient(90deg, #7f5eff, #00d2ff);
+  color: #041126;
+}
+
+/* LANDING PAGE */
+.landing {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: url("assets/magicpattern-65O4Dw6-xLg-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.landing-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.landing-inner {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 900px;
+}
+
+.landing-title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: #d9e3ff;
+}
+
+.logo-x-inline {
+  background: linear-gradient(90deg, #7f5eff, #00d2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.landing-sub {
+  margin-top: 14px;
+  color: #c8d2e5;
+  font-size: 16px;
+}
+
+.start-btn {
+  margin-top: 26px;
+  padding: 14px 24px;
+  background: linear-gradient(90deg, #7f5eff, #00d2ff);
+  border: none;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 17px;
+  cursor: pointer;
+  color: #010914;
+}
+
+/* TRANSITION */
+.landing.fade-out {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+/* CHAT SCREEN */
+.chat-screen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #0a0d1f, #03040a);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 90px 20px 20px;
+  z-index: 200;
+}
+
+.chat-screen.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* CHAT HEADER */
+.chat-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 10px;
+}
+
+.chat-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.back-btn {
+  background: none;
+  color: #c8d2e5;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* CHAT WRAPPER */
+.chat-wrapper {
+  margin-top: 10px;
+  position: relative;
+  height: calc(100vh - 150px);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* Gradient Glow */
+.chat-glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle, rgba(127,94,255,0.2), rgba(0,210,255,0.12), transparent 70%);
+  filter: blur(80px);
+  animation: glowMove 20s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes glowMove {
+  0% { transform: translateY(-5%); }
+  50% { transform: translateY(5%); }
+  100% { transform: translateY(-5%); }
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: relative;
+  z-index: 2;
 }
